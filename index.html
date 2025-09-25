@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/csclogo.png" rel="shortcut icon" type="image/x-icon"/>
+  <title>GWA Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="assets/bg.mp4" type="video/mp4">
+  </video>
+  <div id="disclaimerModal" class="modal">
+    <div class="modal-content">
+      <h2>Notice</h2>
+      <p>
+        This GWA Calculator is <strong>unofficial and for reference purposes only</strong>. All subjects are based on the latest curriculum provided on <a href="https://hau.edu.ph" target="_blank" rel="noopener noreferrer" style="color: white;">hau.edu.ph</a>.
+      </p>
+      <div class="modal-buttons">
+        <button id="acceptBtn">Yes, Proceed</button>
+        <button id="declineBtn">No, Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <img class="csc-logo" src="assets/csclogo.png" alt="csc-logo">
+  <img class="csc-logo2" src="assets/SOC Logo.png" alt="csc-logo">
+    <h1>GWA Calculator</h1>
+    <p class="subtitle">Holy Angel University | School Of Computing</p>
+    <div class="input-group" id="yearSelection">
+      <label for="year">Select Year Level</label>
+      <select id="year" required>
+        <option value="" disabled selected>Select Year</option>
+        <option value="1">1st Year</option>
+        <option value="2">2nd Year</option>
+        <option value="3">3rd Year</option>
+      </select>
+    </div>
+    
+    <div class="input-group" id="courseSelection">
+      <label for="course">Select Course</label>
+      <select id="course" required>
+        <option value="" disabled selected>Select Course</option>
+        <option value="BSIT">Bachelor of Science in Information Technology</option>
+        <option value="BSEMC">Bachelor of Science in Entertainment and Multimedia Computing</option>
+        <option value="BSCS">Bachelor of Science in Computer Science</option>
+        <option value="BSC">Bachelor of Science in Cybersecurity</option>
+        <option value="BSC2">Bachelor of Science in Cyber Security + Professional Science in Master’s in CyberSecurity</option>
+      </select>
+    </div>
+    <div class="input-group" id="specializationSelection" style="display:none;">
+      <label for="specialization">Select Specialization</label>
+      <select id="specialization">
+        <option value="" disabled selected>Select Specialization</option>
+        <option value="WebDev">Web Development</option>
+        <option value="NetAd">Network Administration</option>
+      </select>
+    </div>
+    <div class="input-group" id="semesterSelection">
+      <label for="semester">Select Semester</label>
+      <select id="semester" required>
+        <option value="" disabled selected>Select Semester</option>
+        <option value="1">1st Semester</option>
+        <option value="2">2nd Semester</option>
+      </select>
+    </div>
+    <form id="gwaForm" style="display:none;">
+      <div class="input-group">
+        <label for="subject">Select Subject</label>
+        <select id="subject" required>
+          <option value="" disabled selected>Select Subject</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="grade">Select Grade</label>
+        <select id="grade" required>
+          <option value="" disabled selected>Select Grade</option>
+          <option value="1.0">1.0</option>
+          <option value="1.25">1.25</option>
+          <option value="1.50">1.50</option>
+          <option value="1.75">1.75</option>
+          <option value="2.0">2.0</option>
+          <option value="2.25">2.25</option>
+          <option value="2.50">2.50</option>
+          <option value="2.75">2.75</option>
+          <option value="3.0">3.0</option>
+          <option value="4.0">4.0</option>
+          <option value="5.0">5.0</option>
+        </select>
+      </div>
+      <button type="button" id="addBtn">Add Subject</button>
+    </form>
+    <div class="subjects-list" id="subjectsListDiv" style="display:none;">
+      <h2>Subjects Added</h2>
+      <ul id="subjectList"></ul>
+    </div>
+    <div class="result">
+      <button type="button" id="calcBtn" style="display:none;">Calculate GWA</button>
+      <button type="button" id="changeBtn" style="background:#555; display:none;">Change Course/Semester</button>
+      <p id="gwaResult"></p>
+    </div>
+    <span class="credits" style="text-align: center; opacity: 50%;">
+        <p>designed and developed by <a href="https://www.instagram.com/__l.lvs/" style="color: #ff6600;">__l.lvs</a> &lt;/&gt;</p>
+        <p>have suggestions to improve this? drop it <a href="https://ngl.link/__l.lvs" style="color: #ff6600;">here.</a> anonymously via ngl &lt;3</p>
+    </span>
+  </div>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p id="popupMessage">Popup message</p>
+      <button id="popupClose">OK</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <!-- <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script> -->
+</body>
+</html>
